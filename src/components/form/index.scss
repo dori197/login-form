@@ -1,0 +1,173 @@
+.form {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .field {
+            display: flex;
+
+            input {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px 20px;
+                border-radius: 20px;
+                border: 1.5px solid #2e7d32;
+                color: #2e7d32;
+                outline: none;
+                font-size: 18px;
+                background: rgba(76, 175, 79, 0.100);
+            }
+
+            input:focus+label {
+                transform: translateY(-50%);
+                color: #00cb0a;
+                background: rgb(255, 255, 255);
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+
+            input:not(:placeholder-shown)+label {
+                transform: translateY(-50%);
+            }
+
+            label {
+                position: absolute;
+                transform: translateY(70%);
+                left: 36%;
+                padding: 4px;
+                border-radius: 2px;
+                color: #2e7d32;
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 20px auto;
+        font-weight: 500;
+        font-size: 18px;
+
+        .checkbox-leaf {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #35b73b;
+
+            input[type="checkbox"] {
+                padding: 10px;
+                background: rgba(76, 175, 80, 0.1);
+                border: 1.5px solid rgba(76, 175, 80, 0.3);
+                border-radius: 0 100% 0 100%;
+                transform: rotate(45deg);
+                margin-right: 5px;
+                cursor: pointer;
+                appearance: none;
+                position: relative;
+            }
+
+            input[type="checkbox"]:checked::after {
+                content: "";
+                padding: 10px;
+                border-radius: 0 100% 0 100%;
+                top: 0;
+                left: 0;
+                background-color: #2e7d32;
+                color: white;
+                position: absolute;
+
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #35b73b;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #2e7d32;
+            transition: all 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+
+        }
+
+        a:hover {
+            color: #2e7d32;
+        }
+    }
+
+    .submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 20px 100px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #388e3c, #4caf50, #66bb6a);
+        }
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+    }
+
+    .balance-divider {
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+
+        .divider-branch {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.4), transparent);
+        }
+
+        .divider-center {
+            color: #4caf50;
+            opacity: 0.7;
+            animation: centerPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes centerPulse {
+
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
