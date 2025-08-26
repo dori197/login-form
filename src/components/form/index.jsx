@@ -64,12 +64,12 @@ function Form() {
     <div className='form'>
       <form onSubmit={handleSubmit}>
         <div className='field'>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder='' value={formData.email} onChange={handleEmailChange} />
+          <input type="email" id="email" name="email" required autoComplete="email" placeholder='' value={formData.email} onChange={handleEmailChange} />
           <label>Email Address</label>
         </div>
 
         <div className='field'>
-          <input type="password" id="password" name="password" required autocomplete="current-password" placeholder='' value={formData.password} onChange={handlePasswordChange} />
+          <input type="password" id="password" name="password" required autoComplete="current-password" placeholder='' value={formData.password} onChange={handlePasswordChange} />
           <label>Password</label>
         </div>
 

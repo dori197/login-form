@@ -108,6 +108,18 @@
             cursor: pointer;
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #388e3c, #4caf50, #66bb6a);
+
+            @include pc {
+                padding: 20px 50px;
+            }
+
+            @include tablet {
+                padding: 15px 30px;
+            }
+
+            @include sp {
+                padding: 15px 30px;
+            }
         }
 
         button:hover {

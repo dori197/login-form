@@ -68,3 +68,23 @@
         color: red;
     }
 }
+
+// responsive
+
+@mixin pc {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 500px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}

@@ -1,3 +1,5 @@
+@import "/src/components/mixin/mixin.scss";
+
 .app {
     background-color: white;
     width: 40%;
@@ -6,6 +8,14 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+
+    @include tablet {
+        width: 50%;
+    }
+
+    @include sp {
+        width: 60%;
+    }
 }
 
 .clover-on-background {
@@ -16,16 +26,16 @@
     position: absolute;
     right: 0;
     left: 0;
-    top: 10%;
+    top: 30%;
     bottom: 0;
-    gap: 400px;
+    gap: 300px;
     z-index: 0;
 
     .clover {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(100% / 2 - 200px);
+        width: calc(100% / 2 - 150px);
         font-size: 25px;
         color: #48b84e;
         animation: clover-effect 100s ease-in-out infinite;

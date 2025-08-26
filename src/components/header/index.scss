@@ -1,3 +1,5 @@
+@import "/src/components/mixin/mixin.scss";
+
 .header {
     .overlay {
         background: linear-gradient(90deg, #4caf50, #8bc34a, #cddc39, #8bc34a, #4caf50);
@@ -61,6 +63,10 @@
         font-weight: bolder;
         color: #2e7d32;
         margin-bottom: 15px;
+
+        @include tablet {
+            font-size: 25px;
+        }
     }
 
     &__subTitle {
@@ -71,5 +77,9 @@
         font-style: oblique;
         color: #2e7d32;
         margin-bottom: 20px;
+
+        @include tablet {
+            font-size: 18px;
+        }
     }
 }
