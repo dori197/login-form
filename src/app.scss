@@ -5,3 +5,142 @@
     border-radius: 30px;
     overflow: hidden;
 }
+
+.clover-on-background {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    gap: 400px;
+
+    .clover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% / 2 - 200px);
+        font-size: 25px;
+        color: #48b84e;
+        animation: clover-effect 100s ease-in-out infinite;
+
+        .c1 {
+            transform: rotate(60deg);
+            position: absolute;
+            left: 40%;
+            animation: c1 5s ease-in-out infinite;
+        }
+        @keyframes c1 {
+            0%, 100% {
+                transform: translate(-3px, -5px); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, -0);
+                opacity: 1;
+            }
+        }
+
+        .c2 {
+            position: absolute;
+            transform: rotate(120deg);
+            animation: c2 5s ease-in-out infinite;
+        }
+        @keyframes c2 {
+            0%, 100% {
+                transform: translate(0, 5px); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .c3 {
+            position: absolute;
+            transform: rotate(140deg);
+            animation: c3 5s ease-in-out infinite;
+        }
+        @keyframes c3 {
+            0%, 100% {
+                transform: translate(5px, 0); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .c4 {
+            position: absolute;
+            transform: rotate(240deg);
+            top: 50%;
+            right: 7%;
+            animation: c4 5s ease-in-out infinite;
+        }
+        @keyframes c4 {
+            0%, 100% {
+                transform: translate(-3px, 5px); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .c5 {
+            position: absolute;
+            transform: rotate(360deg);
+            left: 26%;
+            top: 160%;
+            animation: c4 5s ease-in-out infinite;
+        }
+        @keyframes c4 {
+            0%, 100% {
+                transform: translate(-2px, -5px); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .c6 {
+            position: absolute;
+            transform: rotate(320deg);
+            right: 20%;
+            top: 120%;
+            animation: c4 5s ease-in-out infinite;
+        }
+        @keyframes c6 {
+            0%, 100% {
+                transform: translate(-3px, -5px); 
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            position: relative;
+            animation: clover-effect 5s ease infinite;
+        }
+        @keyframes clover-effect {
+            0%, 100% {
+                transform: rotate(60deg);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+        }
+    }
+}
