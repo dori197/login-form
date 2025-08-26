@@ -1,3 +1,5 @@
+@import "/src/components/mixin/mixin.scss";
+
 .form {
     form {
         display: flex;
@@ -48,7 +50,7 @@
         justify-content: space-between;
         align-items: center;
         width: 80%;
-        margin: 20px auto;
+        margin: 0 auto;
         font-weight: 500;
         font-size: 18px;
 
@@ -87,27 +89,8 @@
             text-decoration: none;
             color: #35b73b;
             position: relative;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #2e7d32;
-            transition: all 0.3s ease;
-        }
-
-        a:hover::after {
-            width: 100%;
-
-        }
-
-        a:hover {
-            color: #2e7d32;
-        }
+            @include bottom-line;
+        }   
     }
 
     .submit {
@@ -118,7 +101,6 @@
         button {
             font-size: 18px;
             font-weight: bold;
-            margin: 10px 0;
             padding: 20px 100px;
             border: none;
             border-radius: 20px;

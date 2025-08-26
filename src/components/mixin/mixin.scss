@@ -1,0 +1,70 @@
+@mixin bottom-line {
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #2e7d32;
+        transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        color: #2e7d32;
+    }
+}
+
+@mixin scale-icon-click {
+    & {
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+}
+
+@mixin blue-app-transform-color {
+    & {
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        border: 1px solid rgb(0, 149, 255);
+        transform: rotate(360deg);
+        color: rgb(0, 149, 255);
+    }
+}
+
+@mixin black-app-transform-color {
+    & {
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        border: 1px solid black;
+        transform: rotate(360deg);
+        color: black;
+    }
+}
+
+@mixin red-app-transform-color {
+    & {
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        border: 1px solid red;
+        transform: rotate(360deg);
+        color: red;
+    }
+}

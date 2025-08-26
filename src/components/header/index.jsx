@@ -13,10 +13,10 @@ function Header() {
         </div>
       </div>
       <div className="header__title">
-        <span>Mindful Space</span>
+        <span>LEAFS SPACE</span>
       </div>
       <div className="header__subTitle">
-        Enter your wellness sanctuary
+        Enter your wellness sanctuary 
       </div>
     </div>
   )
