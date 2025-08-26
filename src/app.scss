@@ -4,6 +4,8 @@
     margin: 50px auto;
     border-radius: 30px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .clover-on-background {
@@ -17,6 +19,7 @@
     top: 10%;
     bottom: 0;
     gap: 400px;
+    z-index: 0;
 
     .clover {
         display: flex;
