@@ -85,10 +85,15 @@
             }
         }
 
-        a {
+        button {
             text-decoration: none;
             color: #35b73b;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            background-color: white;
             position: relative;
+            
             @include bottom-line;
         }   
     }

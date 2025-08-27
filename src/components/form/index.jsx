@@ -60,6 +60,31 @@ function Form() {
     });
   }
 
+  const showErrorForFunction = () => {
+    Swal.fire({
+      title: "<strong>This Function Is Not Working Now</strong>",
+      icon: "info",
+      html: `
+    Please Wait To Update <br /> <strong> Thanks!!! </strong>
+  `,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: `
+    <i class="fa fa-thumbs-up"></i> Great!
+  `,
+      confirmButtonAriaLabel: "Thumbs up, great!",
+      cancelButtonText: `
+    <i class="fa fa-thumbs-down"></i>
+  `,
+      cancelButtonAriaLabel: "Thumbs down"
+    });
+  }
+
+  const handleFunction = () => {
+    showErrorForFunction();
+  }
+
   return (
     <div className='form'>
       <form onSubmit={handleSubmit}>
@@ -78,7 +103,7 @@ function Form() {
             <input type='checkbox'></input>
             <span>Keep me centered</span>
           </div>
-          <a href="">Restore access</a>
+          <button onClick={handleFunction}>Restore access</button>
         </div>
 
         <div className="submit">

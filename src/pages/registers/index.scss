@@ -1,0 +1,150 @@
+ @import "/src/components/mixin/mixin.scss";
+ @import url('https://fonts.googleapis.com/css2?family=Asimovian&family=Chela+One&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+ .register {
+     background-color: white;
+     width: 40%;
+     margin: 50px auto;
+     border-radius: 30px;
+     overflow: hidden;
+     position: relative;
+     z-index: 1;
+
+     @include tablet {
+         width: 50%;
+     }
+
+     @include sp {
+         width: 60%;
+     }
+
+     .form {
+         form {
+
+             .vertification-code {
+                 display: flex;
+                 justify-content: center;
+                 align-items: end;
+                 gap: 50px;
+
+                 .code {
+                     font-size: 18px;
+                     color: #2e7d32;
+
+                     p {
+                         text-align: center;
+                         font-size: 25px;
+                         font-weight: bold;
+                         font-style: oblique;
+                         font-family: "Asimovian", sans-serif;
+                         border: 1.5px solid #2e7d32;
+                         border-radius: 3px;
+                         color: #51c257;
+                         background: linear-gradient(to right, #16222a4c, #3a60734c);
+                     }
+                 }
+
+                 .input-code {
+                     input {
+                         color: #2e7d32;
+                         font-size: 15px;
+                         border-radius: 3px;
+                         border: 1.5px solid #2e7d32;
+                         padding: 10px 5px;
+                         background: rgba(76, 175, 79, 0.100);
+                         text-align: center;
+                         outline: none;
+                     }
+
+                     input::placeholder {
+                         color: #2e7d32;
+                         font-size: 13px;
+                     }
+                 }
+             }
+
+             .message-success {
+                 text-align: center;
+                 font-size: 20px;
+                 font-weight: bold;
+                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                 font-style: italic;
+
+                 background: rgba(76, 175, 79, 0.100);
+                 color: #2e7d32;
+                 border: 2px solid #2e7d32;
+                 border-radius: 0 20px 0 20px;
+                 width: 60%;
+                 padding: 15px 0;
+                 margin: 0 auto;
+
+                 animation: message-success-effect 4s ease infinite;
+
+                 @keyframes message-success-effect {
+                    0%, 100% {
+                        opacity: 0.7;
+                        border: 1.5px solid #49cf50;
+                        border-radius: 0 20px 0 20px;
+                        transform: scale(1.2);
+                    }
+                    50% {
+                        opacity: 1;
+                        border: 2px solid #2e7d32;
+                        border-radius: 20px 0 20px 0;
+                        transform: scale(1.1);
+                    }
+                 }
+             }
+
+             .message-error {
+                 text-align: center;
+                 font-size: 20px;
+                 font-weight: bold;
+                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                 font-style: italic;
+
+                 background: rgba(255, 0, 0, 0.100);
+                 color: red;
+                 border: 2px solid red;
+                 border-radius: 0 20px 0 20px;
+                 width: 60%;
+                 padding: 15px 0;
+                 margin: 0 auto;
+
+                 animation: message-error-effect 4s ease infinite;
+
+                 @keyframes message-error-effect {
+                    0%, 100% {
+                        opacity: 0.7;
+                        border: 1.5px solid rgb(197, 77, 77);
+                        border-radius: 0 20px 0 20px;
+                        transform: scale(1.2);
+                    }
+                    50% {
+                        opacity: 1;
+                        border: 2px solid red;
+                        border-radius: 20px 0 20px 0;
+                        transform: scale(1.1);
+                    }
+                 }
+             }
+         }
+     }
+
+     .ending {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 50px;
+
+         a {
+             text-decoration: none;
+             font-size: 20px;
+             color: #2e7d32;
+             position: relative;
+             margin: 10px 0;
+
+             @include bottom-line;
+         }
+     }
+ }

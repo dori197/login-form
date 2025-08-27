@@ -1,0 +1,19 @@
+@import "/src/components/mixin/mixin.scss";
+
+.home {
+    background-color: white;
+    width: 40%;
+    margin: 50px auto;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    @include tablet {
+        width: 50%;
+    }
+
+    @include sp {
+        width: 60%;
+    }
+}
