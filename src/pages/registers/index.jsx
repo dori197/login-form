@@ -119,7 +119,7 @@ function Register() {
                 <p>d0rI</p>
               </div>
               <div className='input-code'>
-                <input type="text" id="code" name='code' placeholder='Enter Code Here To Vertifi' required autoComplete='code' value={formData.vertificationCode} onChange={handleVertificationCodeChange} />
+                <input type="text" id="code" name='code' placeholder='Enter Code Here To Vertifi' required autoComplete='current-code' value={formData.vertificationCode} onChange={handleVertificationCodeChange} />
               </div>
             </div>
 
