@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router';
 import Register from './pages/registers';
+import SpacePage from './pages/space-page';
 
 function App() {
 
@@ -13,8 +14,12 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/createAccount",
+      path: "/Create-Account",
       element: <Register />,
+    },
+    {
+      path: "/Space-Page",
+      element: <SpacePage />,
     },
   ]);
 

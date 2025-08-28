@@ -1,63 +1,76 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./index.scss";
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
   const API_URL = "https://68ad6481a0b85b2f2cf324aa.mockapi.io/Users";
+  const [dataUser, setDataUser] = useState([]);
   const [formData, setFormData] = useState({
     email: '',
     password: ''
-  });
+  })
+
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState('');
+  const [notificationType, setNotificationType] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchAccess();
+  }, [])
+
+  const fetchAccess = async () => {
+    const response = await axios.get(API_URL);
+    console.log(response.data);
+    setDataUser(response.data);
+  }
+
+  const handleAccesData = (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    setTimeout(() => {
+      try {
+
+        const findUser = dataUser.find((user) => (
+          user.email === formData.email
+          && user.password === formData.password
+        ));
+
+        if (findUser) {
+          setNotification('Login Successfully');
+          setNotificationType('success');
+          navigate(`/Space-Page`);
+        } else {
+          setNotification('Incorrect Account or Password');
+          setNotificationType('error');
+        }
+
+      } catch (error) {
+        console.log("Login Failed", error);
+        setNotification('failed');
+      } finally {
+        setLoading(false);
+      }
+    }, 1500);
+  }
 
   const handleEmailChange = (e) => {
     setFormData({
       ...formData, email: e.target.value
     });
   }
+
   const handlePasswordChange = (e) => {
     setFormData({
       ...formData, password: e.target.value
     });
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-
-    try {
-      const response = await axios.post(API_URL, {
-        email: formData.email,
-        password: formData.password,
-        createdAt: new Date().toISOString()
-      });
-
-      if (response.status === 201) {
-        setFormData({
-          email: '',
-          password: ''
-        });
-      }
-
-      showNotification();
-    } catch (error) {
-      console.log("Failed Login", error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const showNotification = () => {
-    Swal.fire({
-      title: "Welcome!!!",
-      text: "Login Succesfully",
-      imageUrl: "https://i.pinimg.com/originals/17/b0/08/17b008553d9e2e4a965ab833e73fbc29.gif",
-      imageWidth: 1000,
-      imageHeight: 200,
-      imageAlt: "Custom image"
-    });
+  const handleFunction = () => {
+    showErrorForFunction();
   }
 
   const showErrorForFunction = () => {
@@ -81,13 +94,9 @@ function Form() {
     });
   }
 
-  const handleFunction = () => {
-    showErrorForFunction();
-  }
-
   return (
     <div className='form'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleAccesData}>
         <div className='field'>
           <input type="email" id="email" name="email" required autoComplete="email" placeholder='' value={formData.email} onChange={handleEmailChange} />
           <label>Email Address</label>
@@ -103,12 +112,18 @@ function Form() {
             <input type='checkbox'></input>
             <span>Keep me centered</span>
           </div>
-          <button onClick={handleFunction}>Restore access</button>
+          <div className='restore' onClick={handleFunction}>Restore access</div>
         </div>
+
+        {notification && (
+          <div className={`notification-${notificationType}`}>
+            {notification}
+          </div>
+        )}
 
         <div className="submit">
           <button type='submit' disabled={loading}>
-            {loading ? 'Please wait...' : 'Enter Sanctuary'}
+            {loading ? 'Please wait...' : 'Access Spaces'}
           </button>
         </div>
       </form>

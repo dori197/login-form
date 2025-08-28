@@ -91,7 +91,7 @@ function Select() {
                 </div>
             </div>
             <div className='createAccount'>
-                <Link to={"/createAccount"}>Don't have an account ?</Link>
+                <Link to={"/Create-Account"}>Don't have an account ?</Link>
             </div>
         </>
     )
